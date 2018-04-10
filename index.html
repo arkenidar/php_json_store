@@ -1,5 +1,6 @@
 <!doctype html>
 <title>mini chat</title>
+<meta charset="utf-8">
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
@@ -46,10 +47,10 @@ computed: {
     },
 })
 
-setInterval(function(){jQuery.getJSON('store.json',function(data){ vue.$data.items=data })}, 5000)
+setInterval(function(){jQuery.getJSON({url:'store.json',cache:false},function(data){ vue.$data.items=data })}, 5000)
 
 function getUsername(){
-    jQuery.getJSON('_.php?username=query',function(data){ vue.$data.username=data })
+    jQuery.getJSON({url:'_.php?username=query',cache:false},function(data){ vue.$data.username=data })
 }
 
 </script>

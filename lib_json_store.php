@@ -1,7 +1,7 @@
 <?php
 
 function read_json($filename){
-    $content=json_decode(file_get_contents($filename));
+    $content=json_decode((string)@file_get_contents($filename));
     return $content;
 }
 
